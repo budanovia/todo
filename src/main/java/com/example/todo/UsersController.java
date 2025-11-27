@@ -23,10 +23,10 @@ class UsersController {
     }
 
     @GetMapping("/users/{id}")
-    Users one(@PathVariable Long id) throws UserNotFoundException {
+    Users one(@PathVariable Long id) throws UsersNotFoundException {
 
         return repository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException(id));
+                .orElseThrow(() -> new UsersNotFoundException(id));
     }
 
     @PostMapping("/users")
