@@ -1,6 +1,7 @@
 package com.example.todo;
 
 import jakarta.persistence.*;
+import org.jspecify.annotations.NonNull;
 
 @Entity
 public class Task {
@@ -14,18 +15,26 @@ public class Task {
     @Column(unique = false, nullable = true)
     private String description;
 
+    //@JoinColumn(name = "users_id")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "users_id")
+    private Users users;
+
     public Task() {
 
+        users = null;
     }
 
     public Task(String title) {
         this.title = title;
+        users = null;
     }
 
     public Task(String title, String description) {
 
         this.title = title;
         this.description = description;
+        users = null;
     }
 
     public Long getId() {
