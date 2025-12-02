@@ -14,6 +14,9 @@ public class Users {
 
     @Column(unique = false, nullable = false)
     private String username;
+    @Column(unique = false, nullable = false)
+    private String password;
+
 
     //@OneToMany(mappedBy = "users", fetch = FetchType.LAZY, orphanRemoval = false, cascade = CascadeType.ALL)
     //@JoinColumn(name = "users_id")
@@ -27,9 +30,10 @@ public class Users {
 
     public Users() {}
 
-    public Users(String username) {
+    public Users(String username, String password) {
 
         this.username = username;
+        this.password = password;
     }
 
     public Long getId() {
@@ -46,6 +50,19 @@ public class Users {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void addTask(Task task) {
+        task.setUsers(this);
+        this.listTasks.add(task);
     }
 
 }

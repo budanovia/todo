@@ -21,20 +21,21 @@ public class Task {
     private Users users;
 
     public Task() {
-
-        users = null;
+        //this.users = users;
+        //users = null;
     }
 
     public Task(String title) {
+        //this.users= users;
         this.title = title;
-        users = null;
+        //users = null;
     }
 
     public Task(String title, String description) {
-
+        //this.users = users;
         this.title = title;
         this.description = description;
-        users = null;
+        //users = null;
     }
 
     public Long getId() {
@@ -59,6 +60,10 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
 
