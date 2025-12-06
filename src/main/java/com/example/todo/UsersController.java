@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 @RestController
 class UsersController {
 
@@ -31,6 +33,8 @@ class UsersController {
 
     @PostMapping("/users")
     Users newUser(@RequestBody Users newUser) {
+        String encodedPassword = new BCryptPasswordEncoder().encode(newUser.getPassword());
+        newUser.setPassword(encodedPassword);
         return repository.save(newUser);
     }
 

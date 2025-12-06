@@ -1,4 +1,4 @@
-package com.example.todo;
+/*package com.example.todo;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -46,4 +46,4 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}
+}*/

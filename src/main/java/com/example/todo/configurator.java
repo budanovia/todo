@@ -1,4 +1,4 @@
-package com.example.todo;
+/*package com.example.todo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,4 +23,4 @@ public class configurator {
 
         return http.build();
     }
-}
+}*/
